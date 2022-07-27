@@ -2,7 +2,7 @@
 Just a simple hex editing lib for cpp.
 ## How to use
 To use HexTools.h, just download the file, put it into your c++ project and link it in the start of the main file.
-## Documentation
+# Documentation
 ## HexByte
 A struct that contains the data for a hex byte.
 ### Constructors
