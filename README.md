@@ -20,3 +20,16 @@ Returns an char with the same value as the HexByte.
 Returns an int with the same value as the HexByte.
 ## HexData
 A struct that can load files into hex and save hex into files, while also allowing you to edit the hex.
+### Constructors
+From file constructor(std::string filename), from buffer constructor(std::vector<unsigned char> buffer), HexData copy constructor.
+#### Example
+HexTools::HexData("Example.bin");
+### Functions
+#### Format
+Returns a string formatted to the specifiations.
+#### Save
+Saves the current HexData to a the specified file.
+#### GetByteAt
+Returns a HexByte from the specified location.
+#### SetByteAt
+Sets a HexByte at the specified location.
