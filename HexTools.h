@@ -104,12 +104,12 @@ namespace HexTools {
             data = hexData.data;
         }
 
-        std::string Format(int horizontalSpacing = 0, int verticalSpacing = 0, int breakEvery = -1, int byteCount = -1) {
+        std::string Format(int horizontalSpacing = 0, int verticalSpacing = 0, int breakEvery = -1, int startByte=0, int endByte=0) {
             std::stringstream stream;
             int index = 0;
             int charNum = 0;
-            for (HexByte byte : data) {
-                stream << byte;
+            for (int i = startByte; i < endByte; i++) {
+                stream << data[i];
                 for (int i = 0; i < horizontalSpacing; i++) {
                     stream << " ";
                 }
@@ -120,10 +120,6 @@ namespace HexTools {
                         stream << "\n";
                     }
                     index = 0;
-                }
-                charNum++;
-                if (charNum == byteCount) {
-                    break;
                 }
             }
             return stream.str();
