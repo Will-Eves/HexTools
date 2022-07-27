@@ -44,7 +44,31 @@ namespace HexTools {
         }
 
         unsigned char ToUnsignedChar() {
+            unsigned char c;
+            std::stringstream stream;
+            stream << std::hex << a << b;
+            stream >> c;
+            return c;
+        }
+
+        unsigned int ToUnsignedInt() {
             unsigned int c;
+            std::stringstream stream;
+            stream << std::hex << a << b;
+            stream >> c;
+            return c;
+        }
+
+        char ToChar() {
+            char c;
+            std::stringstream stream;
+            stream << std::hex << a << b;
+            stream >> c;
+            return c;
+        }
+
+        int ToInt() {
+            int c;
             std::stringstream stream;
             stream << std::hex << a << b;
             stream >> c;
