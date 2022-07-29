@@ -11,6 +11,10 @@ namespace HexTools {
         unsigned char a = '0';
         unsigned char b = '0';
 
+        HexByte() {
+            return;
+        }
+
         HexByte(const unsigned char& data) {
             a = hex_chars[(data & 0xF0) >> 4];
             b = hex_chars[(data & 0x0F) >> 0];
@@ -44,34 +48,394 @@ namespace HexTools {
         }
 
         unsigned char ToUnsignedChar() {
-            unsigned char c;
-            std::stringstream stream;
-            stream << std::hex << a << b;
-            stream >> c;
-            return c;
+            unsigned int c = 0;
+            
+            if (b == '1') {
+                c += 1;
+            }
+            else if (b == '2') {
+                c += 2;
+            }
+            else if (b == '3') {
+                c += 3;
+            }
+            else if (b == '4') {
+                c += 4;
+            }
+            else if (b == '5') {
+                c += 5;
+            }
+            else if (b == '6') {
+                c += 6;
+            }
+            else if (b == '7') {
+                c += 7;
+            }
+            else if (b == '8') {
+                c += 8;
+            }
+            else if (b == '9') {
+                c += 9;
+            }
+            else if (b == 'A') {
+                c += 10;
+            }
+            else if (b == 'B') {
+                c += 11;
+            }
+            else if (b == 'C') {
+                c += 12;
+            }
+            else if (b == 'D') {
+                c += 13;
+            }
+            else if (b == 'E') {
+                c += 14;
+            }
+            else if (b == 'F') {
+                c += 15;
+            }
+
+            if (a == '1') {
+                c += 16;
+            }
+            else if (a == '2') {
+                c += 2 * 16;
+            }
+            else if (a == '3') {
+                c += 3 * 16;
+            }
+            else if (a == '4') {
+                c += 4 * 16;
+            }
+            else if (a == '5') {
+                c += 5 * 16;
+            }
+            else if (a == '6') {
+                c += 6 * 16;
+            }
+            else if (a == '7') {
+                c += 7 * 16;
+            }
+            else if (a == '8') {
+                c += 8 * 16;
+            }
+            else if (a == '9') {
+                c += 9 * 16;
+            }
+            else if (a == 'A') {
+                c += 10 * 16;
+            }
+            else if (a == 'B') {
+                c += 11 * 16;
+            }
+            else if (a == 'C') {
+                c += 12 * 16;
+            }
+            else if (a == 'D') {
+                c += 13 * 16;
+            }
+            else if (a == 'E') {
+                c += 14 * 16;
+            }
+            else if (a == 'F') {
+                c += 15 * 16;
+            }
+
+            return (unsigned char)c;
         }
 
         unsigned int ToUnsignedInt() {
             unsigned int c;
-            std::stringstream stream;
-            stream << std::hex << a << b;
-            stream >> c;
+            
+            if (b == '1') {
+                c += 1;
+            }
+            else if (b == '2') {
+                c += 2;
+            }
+            else if (b == '3') {
+                c += 3;
+            }
+            else if (b == '4') {
+                c += 4;
+            }
+            else if (b == '5') {
+                c += 5;
+            }
+            else if (b == '6') {
+                c += 6;
+            }
+            else if (b == '7') {
+                c += 7;
+            }
+            else if (b == '8') {
+                c += 8;
+            }
+            else if (b == '9') {
+                c += 9;
+            }
+            else if (b == 'A') {
+                c += 10;
+            }
+            else if (b == 'B') {
+                c += 11;
+            }
+            else if (b == 'C') {
+                c += 12;
+            }
+            else if (b == 'D') {
+                c += 13;
+            }
+            else if (b == 'E') {
+                c += 14;
+            }
+            else if (b == 'F') {
+                c += 15;
+            }
+
+            if (a == '1') {
+                c += 16;
+            }
+            else if (a == '2') {
+                c += 2 * 16;
+            }
+            else if (a == '3') {
+                c += 3 * 16;
+            }
+            else if (a == '4') {
+                c += 4 * 16;
+            }
+            else if (a == '5') {
+                c += 5 * 16;
+            }
+            else if (a == '6') {
+                c += 6 * 16;
+            }
+            else if (a == '7') {
+                c += 7 * 16;
+            }
+            else if (a == '8') {
+                c += 8 * 16;
+            }
+            else if (a == '9') {
+                c += 9 * 16;
+            }
+            else if (a == 'A') {
+                c += 10 * 16;
+            }
+            else if (a == 'B') {
+                c += 11 * 16;
+            }
+            else if (a == 'C') {
+                c += 12 * 16;
+            }
+            else if (a == 'D') {
+                c += 13 * 16;
+            }
+            else if (a == 'E') {
+                c += 14 * 16;
+            }
+            else if (a == 'F') {
+                c += 15 * 16;
+            }
+
             return c;
         }
 
         char ToChar() {
-            char c;
-            std::stringstream stream;
-            stream << std::hex << a << b;
-            stream >> c;
+            int c;
+            
+            if (b == '1') {
+                c += 1;
+            }
+            else if (b == '2') {
+                c += 2;
+            }
+            else if (b == '3') {
+                c += 3;
+            }
+            else if (b == '4') {
+                c += 4;
+            }
+            else if (b == '5') {
+                c += 5;
+            }
+            else if (b == '6') {
+                c += 6;
+            }
+            else if (b == '7') {
+                c += 7;
+            }
+            else if (b == '8') {
+                c += 8;
+            }
+            else if (b == '9') {
+                c += 9;
+            }
+            else if (b == 'A') {
+                c += 10;
+            }
+            else if (b == 'B') {
+                c += 11;
+            }
+            else if (b == 'C') {
+                c += 12;
+            }
+            else if (b == 'D') {
+                c += 13;
+            }
+            else if (b == 'E') {
+                c += 14;
+            }
+            else if (b == 'F') {
+                c += 15;
+            }
+
+            if (a == '1') {
+                c += 16;
+            }
+            else if (a == '2') {
+                c += 2 * 16;
+            }
+            else if (a == '3') {
+                c += 3 * 16;
+            }
+            else if (a == '4') {
+                c += 4 * 16;
+            }
+            else if (a == '5') {
+                c += 5 * 16;
+            }
+            else if (a == '6') {
+                c += 6 * 16;
+            }
+            else if (a == '7') {
+                c += 7 * 16;
+            }
+            else if (a == '8') {
+                c += 8 * 16;
+            }
+            else if (a == '9') {
+                c += 9 * 16;
+            }
+            else if (a == 'A') {
+                c += 10 * 16;
+            }
+            else if (a == 'B') {
+                c += 11 * 16;
+            }
+            else if (a == 'C') {
+                c += 12 * 16;
+            }
+            else if (a == 'D') {
+                c += 13 * 16;
+            }
+            else if (a == 'E') {
+                c += 14 * 16;
+            }
+            else if (a == 'F') {
+                c += 15 * 16;
+            }
+
             return c;
         }
 
         int ToInt() {
             int c;
-            std::stringstream stream;
-            stream << std::hex << a << b;
-            stream >> c;
+            
+            if (b == '1') {
+                c += 1;
+            }
+            else if (b == '2') {
+                c += 2;
+            }
+            else if (b == '3') {
+                c += 3;
+            }
+            else if (b == '4') {
+                c += 4;
+            }
+            else if (b == '5') {
+                c += 5;
+            }
+            else if (b == '6') {
+                c += 6;
+            }
+            else if (b == '7') {
+                c += 7;
+            }
+            else if (b == '8') {
+                c += 8;
+            }
+            else if (b == '9') {
+                c += 9;
+            }
+            else if (b == 'A') {
+                c += 10;
+            }
+            else if (b == 'B') {
+                c += 11;
+            }
+            else if (b == 'C') {
+                c += 12;
+            }
+            else if (b == 'D') {
+                c += 13;
+            }
+            else if (b == 'E') {
+                c += 14;
+            }
+            else if (b == 'F') {
+                c += 15;
+            }
+
+            if (a == '1') {
+                c += 16;
+            }
+            else if (a == '2') {
+                c += 2 * 16;
+            }
+            else if (a == '3') {
+                c += 3 * 16;
+            }
+            else if (a == '4') {
+                c += 4 * 16;
+            }
+            else if (a == '5') {
+                c += 5 * 16;
+            }
+            else if (a == '6') {
+                c += 6 * 16;
+            }
+            else if (a == '7') {
+                c += 7 * 16;
+            }
+            else if (a == '8') {
+                c += 8 * 16;
+            }
+            else if (a == '9') {
+                c += 9 * 16;
+            }
+            else if (a == 'A') {
+                c += 10 * 16;
+            }
+            else if (a == 'B') {
+                c += 11 * 16;
+            }
+            else if (a == 'C') {
+                c += 12 * 16;
+            }
+            else if (a == 'D') {
+                c += 13 * 16;
+            }
+            else if (a == 'E') {
+                c += 14 * 16;
+            }
+            else if (a == 'F') {
+                c += 15 * 16;
+            }
+
             return c;
         }
     };
@@ -84,6 +448,10 @@ namespace HexTools {
 
     struct HexData {
         std::vector<HexByte> data;
+
+        HexData() {
+            return;
+        }
 
         HexData(std::string filename) {
             std::ifstream input(filename, std::ios::binary);
@@ -104,7 +472,10 @@ namespace HexTools {
             data = hexData.data;
         }
 
-        std::string Format(int horizontalSpacing = 0, int verticalSpacing = 0, int breakEvery = -1, int startByte=0, int endByte=0) {
+        std::string Format(int horizontalSpacing = 0, int verticalSpacing = 0, int breakEvery = -1, int startByte=0, int endByte=-1) {
+            
+            if (endByte == -1) endByte = data.size();
+            
             std::stringstream stream;
             int index = 0;
             int charNum = 0;
@@ -122,6 +493,7 @@ namespace HexTools {
                     index = 0;
                 }
             }
+            stream << "\n";
             return stream.str();
         }
 
@@ -133,7 +505,7 @@ namespace HexTools {
                 buffer += byte.ToUnsignedChar();
             }
 
-            output.write((const char*)buffer.c_str(), data.size() * sizeof(unsigned char));
+            output.write((const char*)buffer.c_str(), buffer.size());
         }
 
         HexByte GetByteAt(long long position) {
